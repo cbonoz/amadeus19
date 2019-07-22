@@ -1,0 +1,130 @@
+@import 'colors.scss';
+
+html {
+  height: 100%;
+
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.navbar {
+  background-color: $swatch_5 !important;
+}
+
+.home-content {
+  margin-top: 76px;
+}
+
+.container { 
+  width: auto; 
+  max-width: 100%;
+}
+
+.row {
+  [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+.submit-button-section {
+  margin-top: 20px;
+}
+
+.select-menu {
+  border: 1px solid black;
+}
+
+.search-text {
+  // font-weight: bold;
+  color: $swatch_1;
+}
+
+.sidebar-item {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.sidebar-option-section {
+  margin: 10px;
+  margin-top: 20px;
+  vertical-align: center;
+  border-radius: 5px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 20px;
+  background: white;
+}
+
+.select-item:hover {
+  cursor: pointer;
+  background: $swatch_1;
+}
+
+.result-header {
+  padding-top: 20px;
+  padding-left: 20px;
+  color: $swatch_6;
+}
+
+.select-item {
+  border-radius: 3px;
+  background: white;
+  padding: 15px;
+  font-size: 90%;
+  // position: fixed;
+  // overflow: auto;
+  max-height: 50%; // TODO: dont cheat; let it flow to the bottom
+  z-index: 998;
+}
+
+.plane-gif {
+  background-repeat: no-repeat;
+  background-size: auto;
+  width: 100%;
+  height: 100vh;
+}
+
+.airport-section input {
+  width: 325px !important;
+}
+
+.flight-result-row {
+  border: 1px dotted $swatch_3;
+  line-height: 70px;
+  height: 60px;
+  padding: 5px;
+}
+
+.flight-result-row:hover {
+  cursor: pointer;
+  background: $swatch_1;
+}
+
+.sidebar-section {
+  padding: 10px;
+  background-color: $swatch_8;
+  height: 100vh;
+}
+
+.navbar a {
+  color: $swatch_1;
+}
+
+
+.navbar a:hover {
+  color: $swatch_7;
+}

@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import Sidebar from "./Sidebar"
 import Results from "./Results"
-import Map from "./Map"
+import ResultMap from "./ResultMap"
 // import { searchFlights, findAirports } from './../api'
 import "react-datepicker/dist/react-datepicker.css"
 import { Container, Row, Col } from "react-bootstrap"
@@ -14,7 +14,9 @@ class Home extends Component {
   }
 
   setResults(activeResults) {
-    this.setState({ activeResults })
+    if (activeResults) {
+      this.setState({ activeResults })
+    }
   }
 
   setFlight(activeFlight) {
@@ -37,7 +39,9 @@ class Home extends Component {
           <Row>
             <Col xs={12} md={4}>
               <Sidebar
-                setFlight={a => this.setAirport(a)}
+                activeAirport={activeAirport}
+                activeResults={activeResults}
+                setAirport={a => this.setAirport(a)}
                 setResults={r => this.setResults(r)}
               />
             </Col>
@@ -48,11 +52,13 @@ class Home extends Component {
                     <Results
                       activeResults={activeResults}
                       activeAirport={activeAirport}
+                      setFlight={f => this.setFlight(f)}
                       setResults={r => this.setResults(r)}
                     />
                   )}
                   {activeFlight && (
-                    <Map
+                    <ResultMap
+                      activeFlight={activeFlight}
                       activeAirport={activeAirport}
                       clearFlight={this.clearFlight}
                     />
