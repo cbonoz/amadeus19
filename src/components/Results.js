@@ -5,6 +5,7 @@ import chroma from 'chroma-js'
 
 import { findMatchingAirportByCode, getFlightResults } from "./../api"
 import { Button } from "react-bootstrap";
+import arrow_logo from './../assets/arrow.png'
 
 class Results extends Component {
 
@@ -79,7 +80,7 @@ class Results extends Component {
 
             return (
               <div className="flight-result-row" key={i} onClick={() => { this.selectFlight(result) }}>
-                <b>{origin}</b> -> <b>{dest}</b> from {departureDate} to {returnDate}
+                <b>{origin}</b> <img className='arrow-icon' src={arrow_logo}/> <b>{dest}</b> from {departureDate} to {returnDate}
                 <Button style={{backgroundColor: getColor(total, minPrice, maxPrice)}} 
                   className='flight-result-button' 
                   target="_blank" href={this.getFlightSearchUrl(result)}>

@@ -198,7 +198,7 @@ class Sidebar extends Component {
 
         {activeResults && activeResults.length > 10 && <div>
 
-          <p className='bottom-result-text'>...maybe more than a few flights</p>
+          <p className='bottom-result-text'>...maybe more than just a few flights</p>
           
         </div>}
       </div>
