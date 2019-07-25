@@ -15,9 +15,15 @@ function parse(stringValue) {
   return stringValue.replace(/^\$/, "")
 }
 
+function getDefaultDate() {
+  var myDate = new Date();
+  myDate.setDate(myDate.getDate() + 1);
+  return myDate
+}
+
 const initialState = {
-  startDate: new Date(),
-  endDate: new Date(),
+  startDate: getDefaultDate(),
+  endDate: getDefaultDate(),
   airport: "",
   airportList: [],
   maxPrice: 500
@@ -93,9 +99,10 @@ class Sidebar extends Component {
     try {
       const response = await searchFlights(origin, formData)
       // Update the active results and airport.
-      const locationDict = response.dictionaries.locations
-      const flightInfo = response.data.map(entry => {
-        entry.destinationName = locationDict[entry.destination]
+      const responseData = response.data
+      const locationDict = responseData.dictionaries.locations
+      const flightInfo = responseData.data.map(entry => {
+        entry.destinationName = locationDict[entry.destination].detailedName
         return entry
       })
       setResults(flightInfo)
@@ -188,6 +195,12 @@ class Sidebar extends Component {
             </Button>}
           </div>
         </div>
+
+        {activeResults && activeResults.length > 10 && <div>
+
+          <p className='bottom-result-text'>...maybe more than a few flights</p>
+          
+        </div>}
       </div>
     )
   }

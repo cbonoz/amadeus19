@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import FlipMove from "react-flip-move"
 import plane from "../assets/plane.gif"
+import chroma from 'chroma-js'
 
 import { findMatchingAirportByCode, getFlightResults } from "./../api"
 import { Button } from "react-bootstrap";
@@ -45,6 +46,16 @@ class Results extends Component {
         return res
       })
       .sort((a, b) => a.price.total - b.price.total)
+
+    const scale = chroma.scale(['#0f0', '#f00']).mode('lrgb');
+
+    const getColor = (price, minPrice, maxPrice) => {
+      const percentage = (price - minPrice) / (maxPrice - minPrice)
+      return scale(percentage).hex()
+    }
+
+    const maxPrice = flights[flights.length - 1].price.total
+    const minPrice = flights[0].price.total
     return (
       <div>
         <h5 className="result-header">
@@ -63,13 +74,17 @@ class Results extends Component {
               destinationName
             } = result
             const total = price.total
-            // let dest = findMatchingAirportByCode(destination)
-            const dest = destinationName || destination
+            const match = findMatchingAirportByCode(destination)
+            const dest = (match && match.name) || destinationName || destination
 
             return (
               <div className="flight-result-row" key={i} onClick={() => { this.selectFlight(result) }}>
-                {origin} -> {dest} from {departureDate} to {returnDate}
-                <Button target="_blank" variant='success' href={this.getFlightSearchUrl(result)}>${total}</Button>
+                <b>{origin}</b> -> <b>{dest}</b> from {departureDate} to {returnDate}
+                <Button style={{backgroundColor: getColor(total, minPrice, maxPrice)}} 
+                  className='flight-result-button' 
+                  target="_blank" href={this.getFlightSearchUrl(result)}>
+                  ${total}
+                </Button>
               </div>
             )
           })}

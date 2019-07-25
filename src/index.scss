@@ -49,7 +49,7 @@ code {
 }
 
 .search-text {
-  // font-weight: bold;
+  font-weight: bold;
   color: $swatch_1;
 }
 
@@ -91,6 +91,27 @@ code {
   z-index: 998;
 }
 
+.flight-result-button {
+  float: right;
+  margin-top: 10px;
+  margin-right: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border: none;
+}
+
+.sidebar-column {
+  background-color: $swatch_8; 
+}
+
+.bottom-result-text {
+  position: absolute;
+  color: $swatch_1;
+  font-size: 20px;
+  bottom: 10px;
+  left: 25px;
+  font-weight: bold;
+}
 .plane-gif {
   background-repeat: no-repeat;
   background-size: auto;
@@ -104,9 +125,9 @@ code {
 
 .flight-result-row {
   border: 1px dotted $swatch_3;
-  line-height: 70px;
-  height: 60px;
-  padding: 5px;
+  line-height: 60px;
+  // height: 60px;
+  padding-left: 20px;
 }
 
 .flight-result-row:hover {
