@@ -97,10 +97,16 @@ class Results extends Component {
               <div
                 className="flight-result-row"
                 key={i}
-                onClick={() => { this.selectFlight(result)}}>
+                onClick={() => {
+                  this.selectFlight(result)
+                }}
+              >
                 <b>{origin}</b> <img className="arrow-icon" src={arrow_logo} />{" "}
                 <b>{dest}</b> from {departureDate} to {returnDate}
-                <Button style={{backgroundColor: getColor(total, minPrice, maxPrice)}}
+                <Button
+                  style={{
+                    backgroundColor: getColor(total, minPrice, maxPrice)
+                  }}
                   className="flight-result-button"
                   onClick={this.handleShow}
                 >
@@ -111,40 +117,47 @@ class Results extends Component {
           })}
         </FlipMove>
 
-        {activeFlight && <Modal show={show} onHide={this.handleClose}  className='flight-select-modal'>
-          <Modal.Header closeButton>
-            <Modal.Title>Book this flight</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <p>
-              <b>You selected the following flight:</b>
-              <br/>
-              <pre>
-                Flight leaving from {activeFlight.origin} on {activeFlight.departureDate} to {activeFlight.destinationName} returning {activeFlight.returnDate}.
-
-                Cost: ${activeFlight.price.total}
-              </pre>
+        {activeFlight && (
+          <Modal
+            show={show}
+            onHide={this.handleClose}
+            className="flight-select-modal"
+          >
+            <Modal.Header closeButton>
+              <Modal.Title>Book this flight</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <p>
+                <b>You selected the following flight:</b>
               </p>
+              <pre>
+                Flight leaving from {activeFlight.origin} on{" "}
+                {activeFlight.departureDate} to {activeFlight.destinationName}{" "}
+                returning {activeFlight.returnDate}. Cost: $
+                {activeFlight.price.total}
+              </pre>
 
               <p className="warning-text">
-              Clicking continue will open a new tab to allow booking this flight. Do you want to proceed?
-            </p>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={this.handleClose}>
-              Go back
-            </Button>
-            <Button
-              variant="success"
-              onClick={() => {
-                window.open(this.getFlightSearchUrl(activeFlight), "_blank")
-                this.handleClose()
-              }}
-            >
-              Continue
-            </Button>
-          </Modal.Footer>
-        </Modal>}
+                Clicking continue will open a new tab to allow booking this
+                flight. Do you want to proceed?
+              </p>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={this.handleClose}>
+                Go back
+              </Button>
+              <Button
+                variant="success"
+                onClick={() => {
+                  window.open(this.getFlightSearchUrl(activeFlight), "_blank")
+                  this.handleClose()
+                }}
+              >
+                Continue
+              </Button>
+            </Modal.Footer>
+          </Modal>
+        )}
       </div>
     )
   }

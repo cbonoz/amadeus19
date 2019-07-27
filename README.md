@@ -39,6 +39,12 @@ Start the web server:
     <img width=800 src='./img/flights.png'>
 <p>
 
+
+#### Selecting a Flight
+<p align='center'>
+    <img width=800 src='./img/select.png'>
+<p>
+
 #### Link to book
 <p align='center'>
     <img width=800 src='./img/google.png'>
