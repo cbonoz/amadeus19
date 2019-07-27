@@ -31,15 +31,15 @@ Start the web server:
 
 #### Home page
 <p align='center'>
-    <img width=600 src='./img/home.png'>
+    <img width=800 src='./img/home.png'>
 <p>
 
 #### Flight results
 <p align='center'>
-    <img width=600 src='./img/flights.png'>
+    <img width=800 src='./img/flights.png'>
 <p>
 
 #### Link to book
 <p align='center'>
-    <img width=600 src='./img/google.png'>
+    <img width=800 src='./img/google.png'>
 <p>
