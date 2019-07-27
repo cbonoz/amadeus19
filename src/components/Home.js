@@ -48,21 +48,15 @@ class Home extends Component {
             <Col xs={12} md={8}>
               {activeResults && (
                 <div>
-                  {!activeFlight && (
+                  {/* {!activeFlight && ( */}
                     <Results
                       activeResults={activeResults}
                       activeAirport={activeAirport}
+                      activeFlight={activeFlight}
                       setFlight={f => this.setFlight(f)}
                       setResults={r => this.setResults(r)}
                     />
-                  )}
-                  {activeFlight && (
-                    <ResultMap
-                      activeFlight={activeFlight}
-                      activeAirport={activeAirport}
-                      clearFlight={this.clearFlight}
-                    />
-                  )}
+                  {/* )} */}
                 </div>
               )}
             </Col>

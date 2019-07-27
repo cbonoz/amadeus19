@@ -120,6 +120,11 @@ class Sidebar extends Component {
     const { startDate, endDate, airport, airportList, maxPrice } = this.state
     const { setAirport, activeResults } = this.props
 
+    let selectedAirport = {}
+    if (airport && airport.length > 0) {
+      selectedAirport = findMatchingAirportByName(airport)
+    }
+
     return (
       <div className="sidebar-section">
         <p className="search-text">Inspirational Travel just a search away</p>
@@ -160,6 +165,11 @@ class Sidebar extends Component {
                   </div>
                 )}
               />
+              {Object.keys(selectedAirport || {}).length > 1 && <div>
+                <br/>
+                {/* <h5>Selected Airport:</h5> */}
+                <p>Origin Airport Code: <b>{selectedAirport.code}</b><br/>Location: <b>{selectedAirport.city}, {selectedAirport.state} {selectedAirport.country}</b></p>
+              </div>}
             </div>
           </div>
           <hr/>
