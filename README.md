@@ -32,12 +32,10 @@ Start the web server
     <img width=400 src='./img/home.png'>
 <p>
 
-
 #### Flight results
 <p align='center'>
     <img width=400 src='./img/flights.png'>
 <p>
-
 
 #### Link to book
 <p align='center'>
