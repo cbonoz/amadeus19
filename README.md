@@ -29,6 +29,8 @@ Start the web server:
     yarn start
 </pre>
 
+Note to use the `serve.sh` script for deploying the project you will need to configure your own firebase app credentials. Alternatively, use the hosting provider of your choice.
+
 ### Screenshots
 
 #### Home page
@@ -40,7 +42,6 @@ Start the web server:
 <p align='center'>
     <img width=800 src='./img/flights.png'>
 <p>
-
 
 #### Selecting a Flight
 <p align='center'>
