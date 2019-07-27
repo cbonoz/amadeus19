@@ -48,7 +48,7 @@ Note to use the `serve.sh` script for deploying the project you will need to con
     <img width=800 src='./img/select.png'>
 <p>
 
-#### Link to book
+#### Link to book (currently connects to external provider)
 <p align='center'>
     <img width=800 src='./img/google.png'>
 <p>
