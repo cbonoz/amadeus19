@@ -15,15 +15,15 @@ function parse(stringValue) {
   return stringValue.replace(/^\$/, "")
 }
 
-function getDefaultDate() {
+function getDefaultDate(dayOffset) {
   var myDate = new Date();
-  myDate.setDate(myDate.getDate() + 1);
+  myDate.setDate(myDate.getDate() + dayOffset);
   return myDate
 }
 
 const initialState = {
-  startDate: getDefaultDate(),
-  endDate: getDefaultDate(),
+  startDate: getDefaultDate(1),
+  endDate: getDefaultDate(2),
   airport: "",
   airportList: [],
   maxPrice: 500

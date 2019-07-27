@@ -133,7 +133,7 @@ class Results extends Component {
               <pre>
                 Flight leaving from {activeFlight.origin} on{" "}
                 {activeFlight.departureDate} to {activeFlight.destinationName}{" "}
-                returning {activeFlight.returnDate}. Cost: $
+                returning {activeFlight.returnDate}. Estimated cost: $
                 {activeFlight.price.total}
               </pre>
 
